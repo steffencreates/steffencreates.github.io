@@ -1,0 +1,16 @@
+@import "theme-definitions";
+
+/// Set your default active theme here.
+// You can even override this from a separate file if you want.
+$active-theme: $theme-light !default;
+
+/// Fetch a semantic token from $active-theme.
+/// Usage: color: theme('text'); or background: theme('primary');
+@function theme($key) {
+	@if (map-has-key($active-theme, $key)) {
+		@return map-get($active-theme, $key);
+	} @else {
+		@error "Unknown theme key `#{$key}` in `$active-theme` map.";
+	}
+}
+

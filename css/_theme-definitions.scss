@@ -1,0 +1,35 @@
+@import "tokens";
+
+// ——— 1. Semantic Token Defaults (pointing to “light” versions) ———
+$color-semantic: (
+	background: $color-ash,
+	text: $color-ink
+) !default;
+
+// ——— 2. Light Theme Map ———
+$theme-light: (
+	background: map-get($color-semantic, background),
+	text: map-get($color-semantic, text),
+	shadow: (
+		0px 0px 0px 1px #0e3f7e08,
+		0px 1px 1px -0.5px #2a334508,
+		0px 3px 3px -1.5px #2a334608,
+		0px 6px 6px -3px #2a334608,
+		0px 12px 12px -6px #0e3f7e08,
+		0px 24px 24px -12px #0e3f7e10
+	)
+) !default;
+
+// ——— 3. Dark Theme Map ———
+$theme-dark: (
+	background: $color-ink,
+	text: $color-ash,
+	shadow: (
+		0px 0px 0px 1px rgba(165, 165, 165, 0.04),
+		-9px 9px 9px -0.5px rgba(0, 0, 0, 0.04),
+		-18px 18px 18px -1.5px rgba(0, 0, 0, 0.08),
+		-37px 37px 37px -3px rgba(0, 0, 0, 0.16),
+		-75px 75px 75px -6px rgba(0, 0, 0, 0.24),
+		-150px 150px 150px -12px rgba(0, 0, 0, 0.48)
+	)
+) !default;
